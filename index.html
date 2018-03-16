@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+  <script>
+
+    function computerPlay() {
+      let randomize = Math.random();
+      if (randomize >= 0 && randomize <= 0.3)
+      {
+        return 'Rock';
+      } else if (randomize > 0.3 && randomize <= 0.7) {
+        return 'Paper';
+      } else {
+        return 'Scissors';
+      }
+    }
+
+    function playRound(playerSelection, computerSelection) {
+      switch (playerSelection + '|' + computerSelection) {
+        case 'Rock|Paper':
+          return 'You Lose! Paper beats Rock';
+          break;
+        case 'Rock|Scissors':
+          return 'You Win! Rock beat Scissors';
+          break;
+        case 'Rock|Rock':
+          return 'It\'s a draw';
+          break;
+        case 'Paper|Paper':
+          return 'It\'s a draw';
+          break;
+        case 'Paper|Scissors':
+          return 'You Lose! Scissors beat Paper';
+          break;
+        case 'Paper|Rock':
+          return 'You Win! Paper beats Rock';
+          break;
+        case 'Scissors|Paper':
+        return 'You Win! Scissors beat Paper';
+        break;
+        case 'Scissors|Scissors':
+          return 'It\'s a draw';
+          break;
+        case 'Scissors|Rock':
+          return 'You Lose! Rock beat Scissors';
+          break;
+      }
+    }
+  </script>
+</body>
+</html>
