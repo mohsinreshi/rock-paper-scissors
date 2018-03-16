@@ -17,7 +17,17 @@
     }
 
     function playRound(playerSelection, computerSelection) {
-      switch (playerSelection + '|' + computerSelection) {
+      let firstLetter = playerSelection.charAt(0)
+      , finalFirstLetter = firstLetter.toUpperCase()
+      , size = playerSelection.length
+      , remainLetter = "";
+      for (let i = 1; i <= size; i++) {
+        remainLetter += playerSelection.charAt(i);
+      }
+      let finalRemainLetter = remainLetter.toLowerCase()
+      , fullString = finalFirstLetter + finalRemainLetter;
+
+      switch (fullString + '|' + computerSelection) {
         case 'Rock|Paper':
           return 'You Lose! Paper beats Rock';
           break;
@@ -47,6 +57,7 @@
           break;
       }
     }
+
   </script>
 </body>
 </html>
