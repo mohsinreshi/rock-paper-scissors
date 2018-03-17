@@ -10,51 +10,38 @@
       let randomize = Math.random();
       if (randomize >= 0 && randomize <= 0.3)
       {
-        return 'Rock';
+        return 'ROCK';
       } else if (randomize > 0.3 && randomize <= 0.7) {
-        return 'Paper';
+        return 'PAPER';
       } else {
-        return 'Scissors';
+        return 'SCISSORS';
       }
     }
 
     function playRound(playerSelection, computerSelection) {
-      let firstLetter = playerSelection.charAt(0)
-      , finalFirstLetter = firstLetter.toUpperCase()
-      , size = playerSelection.length
-      , remainLetter = "";
-      for (let i = 1; i <= size; i++) {
-        remainLetter += playerSelection.charAt(i);
+      let fullString = playerSelection.toUpperCase();
+
+      if (fullString == computerSelection) {
+        return 'It\'s a draw';
       }
-      let finalRemainLetter = remainLetter.toLowerCase()
-      , fullString = finalFirstLetter + finalRemainLetter;
 
       switch (fullString + '|' + computerSelection) {
-        case 'Rock|Paper':
+        case 'ROCK|PAPER':
           return 'You Lose! Paper beats Rock';
           break;
-        case 'Rock|Scissors':
+        case 'ROCK|SCISSORS':
           return 'You Win! Rock beat Scissors';
           break;
-        case 'Rock|Rock':
-          return 'It\'s a draw';
-          break;
-        case 'Paper|Paper':
-          return 'It\'s a draw';
-          break;
-        case 'Paper|Scissors':
+        case 'PAPER|SCISSORS':
           return 'You Lose! Scissors beat Paper';
           break;
-        case 'Paper|Rock':
+        case 'PAPER|ROCK':
           return 'You Win! Paper beats Rock';
           break;
-        case 'Scissors|Paper':
-        return 'You Win! Scissors beat Paper';
-        break;
-        case 'Scissors|Scissors':
-          return 'It\'s a draw';
+        case 'SCISSORS|PAPER':
+          return 'You Win! Scissors beat Paper';
           break;
-        case 'Scissors|Rock':
+        case 'SCISSORS|ROCK':
           return 'You Lose! Rock beat Scissors';
           break;
       }
