@@ -44,7 +44,6 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
   let rounds = 0;
-  do {
     const playerSelection = prompt('Enter your choice:');
     const computerSelection = computerPlay();
     console.log(playRound(playerSelection, computerSelection));
@@ -61,8 +60,7 @@ function game() {
     } else {
       console.log('Player: ' + a + ' Computer: ' + b);
     }
-    rounds++;
-  } while (rounds < 5);
+  } 
   if (rounds == 5) {
     if (a > b) {
       console.log("Game Over: Player Wins!")
