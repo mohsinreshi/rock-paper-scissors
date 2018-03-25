@@ -19,6 +19,7 @@ button:focus {
 }
 
 .container {
+  position: relative;
   display: flex;
   flex: 1;
   justify-content: center;
@@ -41,4 +42,28 @@ button:focus {
   transition: all .04s ease;
   transform: scale(1.1);
   border-color: #1376d8;
+}
+
+.user {
+  background-image: url("images/person.png");
+  left: 350px;
+}
+
+.computer {
+  background-image: url("images/computer.jpg");
+  right: 350px;
+}
+
+.user,
+.computer {
+  border-radius: 100%;
+  background-color: #3094f8;
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  box-shadow: 5px 6px 1px #0a0a0a2e;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200px 200px;
+  top: 300px;
 }
