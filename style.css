@@ -4,7 +4,7 @@ html {
 }
 
 button {
-  border: none;
+  border: 5px solid #90c9c0;
   height: 200px;
   width: 200px;
   background-color: #90c9c0;
@@ -23,4 +23,22 @@ button:focus {
   flex: 1;
   justify-content: center;
   align-items: center;
+}
+
+#scissors:hover {
+  transition: all .04s ease;
+  transform: scale(1.1);
+  border-color: #e36844;
+}
+
+#paper:hover {
+  transition: all .04s ease;
+  transform: scale(1.1);
+  border-color: #efa449;
+}
+
+#rock:hover {
+  transition: all .04s ease;
+  transform: scale(1.1);
+  border-color: #1376d8;
 }
