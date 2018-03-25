@@ -1,0 +1,26 @@
+html {
+  background-image: url("images/background.png");
+  background-position: center;
+}
+
+button {
+  border: 5px solid #0093ff8a;
+  height: 200px;
+  width: 200px;
+  background-color: #90c9c0;
+  text-decoration: none;
+  border-radius: 100%;
+  margin-right: 30px;
+  margin-top: 30px;
+}
+button:focus {
+  outline: 0;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+
+}
