@@ -17,6 +17,9 @@ button {
 button:focus {
   outline: 0;
 }
+ #reload {
+  background-color: #3e9f3e;
+}
 
 .container {
   position: relative;
@@ -44,6 +47,12 @@ button:focus {
   border-color: #1376d8;
 }
 
+#reload:hover {
+  transition: all .04s ease;
+  transform: scale(1.1);
+  border-color: white;
+}
+
 .user {
   background-image: url("images/person.png");
   left: 350px;
@@ -57,6 +66,7 @@ button:focus {
 .user,
 .computer {
   border-radius: 100%;
+  border: 3px solid #0a0a0a2e;
   background-color: #3094f8;
   position: absolute;
   height: 250px;
@@ -66,4 +76,21 @@ button:focus {
   background-position: center;
   background-size: 200px 200px;
   top: 300px;
+}
+
+.scoreContainer {
+    position: relative;
+    top: 130px;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+#score {
+  font-size: 100px;
+  font-weight: bold;
+  font-family: 'Indie Flower', cursive;
+  color: #00f7fb;
+  text-shadow: 4px 3px #0a0a0a2e;
 }
