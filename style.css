@@ -55,12 +55,12 @@ button:focus {
 
 .user {
   background-image: url("images/person.png");
-  left: 350px;
+  left: 370px;
 }
 
 .computer {
   background-image: url("images/computer.jpg");
-  right: 350px;
+  right: 440px;
 }
 
 .user,
