@@ -55,7 +55,7 @@ button:focus {
 
 .user {
   background-image: url("images/person.png");
-  left: 370px;
+  left: 410px;
 }
 
 .computer {
@@ -90,7 +90,7 @@ button:focus {
 #score {
   font-size: 100px;
   font-weight: bold;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Raleway', sans-serif;
   color: #00f7fb;
   text-shadow: 4px 3px #0a0a0a2e;
 }
