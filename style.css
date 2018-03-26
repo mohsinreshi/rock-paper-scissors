@@ -53,44 +53,56 @@ button:focus {
   border-color: white;
 }
 
+
+.players {
+  text-align: center;
+  position: relative;
+  top: 100px;
+}
+
+.info {
+  display: inline-block;
+  margin: 20px;
+}
 .user {
   background-image: url("images/person.png");
-  left: 410px;
+  position: relative;
 }
 
 .computer {
   background-image: url("images/computer.jpg");
-  right: 440px;
+  position: relative;
 }
 
 .user,
 .computer {
+  top: 50px;
+  margin: 20px;
   border-radius: 100%;
   border: 3px solid #0a0a0a2e;
   background-color: #3094f8;
-  position: absolute;
   height: 250px;
   width: 250px;
   box-shadow: 5px 6px 1px #0a0a0a2e;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 200px 200px;
-  top: 300px;
 }
 
-.scoreContainer {
-    position: relative;
-    top: 130px;
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
+.scorecard {
+  height: 200px;
+  width: 400px;
+  position: relative;
+  top: 50px;
+  vertical-align: top;
 }
 
-#score {
-  font-size: 100px;
+.score {
+  position: relative;
+  font-size: 70px;
   font-weight: bold;
   font-family: 'Raleway', sans-serif;
   color: #00f7fb;
   text-shadow: 4px 3px #0a0a0a2e;
+  display: inline-block;
 }
