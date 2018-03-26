@@ -1,6 +1,9 @@
 const buttons = document.querySelectorAll('.button');
 const button = document.querySelector('.button');
 let myImage = document.querySelector('.computer');
+const scoreContainer = document.querySelector('.scoreContainer');
+const scoreSpan = document.createElement('span');
+scoreSpan.setAttribute('id', 'score');
 let playerSelection = ''
 ,   a = 0
 ,   b = 0;
@@ -9,7 +12,8 @@ buttons.forEach(button => button.addEventListener('click', function() {
   if (playerSelection == 'RELOAD') {
     a = 0;
     b = 0;
-    console.log(a + ' - ' + b);
+    scoreSpan.textContent = a + ' - ' + b;
+    scoreContainer.appendChild(scoreSpan);
     myImage.setAttribute('style', 'background-image: url("images/computer.jpg");');
   } else {
     game();
@@ -58,24 +62,30 @@ function game() {
     }
     if (playRound(playerSelection, computerSelection) == 'Win') {
       a += 1;
-      console.log(a + ' - ' + b);
+      //console.log(a + ' - ' + b);
+      scoreSpan.textContent = a + ' - ' + b;
+      scoreContainer.appendChild(scoreSpan);
     } else if (playRound(playerSelection, computerSelection) == 'Lose') {
       b += 1;
-      console.log(a + ' - ' + b);
+      //console.log(a + ' - ' + b);
+      scoreSpan.textContent = a + ' - ' + b;
+      scoreContainer.appendChild(scoreSpan);
     } else {
-      console.log(a + ' - ' + b);
+      //console.log(a + ' - ' + b);
+      scoreSpan.textContent = a + ' - ' + b;
+      scoreContainer.appendChild(scoreSpan);
     }
     if (a == 5 && b < 5) {
       a = 0;
       b = 0;
-      console.log('Player Wins');
+      scoreSpan.textContent = 'Player Wins';
     } else if (a < 5 && b == 5) {
       a = 0;
       b = 0;
-      console.log('Computer Wins');
+      scoreSpan.textContent = 'Computer Wins';
     } else if (a == b == 5) {
       a = 0;
       b = 0;
-      console.log('Draw');
+      scoreSpan.textContent = 'Draw';
     }
   }
