@@ -6,4 +6,4 @@ Skills used:
 
 1. JavaScript (functions)
 
-Live link:   mohsinreshi.github.io/rock-paper-scissors/
+Live link:   https://mohsinreshi.github.io/rock-paper-scissors/
