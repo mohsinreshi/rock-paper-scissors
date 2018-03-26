@@ -1,12 +1,16 @@
 const buttons = document.querySelectorAll('.button');
 const button = document.querySelector('.button');
-
-let playerSelection = '';
+let myImage = document.querySelector('.computer');
+let playerSelection = ''
+,   a = 0
+,   b = 0;
 buttons.forEach(button => button.addEventListener('click', function() {
   playerSelection = button.value;
   if (playerSelection == 'RELOAD') {
     a = 0;
     b = 0;
+    console.log(a + ' - ' + b);
+    myImage.setAttribute('style', 'background-image: url("images/computer.jpg");');
   } else {
     game();
   }
@@ -26,46 +30,52 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection == computerSelection) {
-    return 'It\'s a draw';
+    return 'Draw';
   }
   switch (playerSelection + '|' + computerSelection) {
-    case 'ROCK|PAPER':
-      return 'You Lose! Paper beats Rock';
-      break;
     case 'ROCK|SCISSORS':
-      return 'You Win! Rock beat Scissors';
-      break;
-    case 'PAPER|SCISSORS':
-      return 'You Lose! Scissors beat Paper';
+      return 'Win';
       break;
     case 'PAPER|ROCK':
-      return 'You Win! Paper beats Rock';
+      return 'Win';
       break;
     case 'SCISSORS|PAPER':
-      return 'You Win! Scissors beat Paper';
+      return 'Win';
       break;
-    case 'SCISSORS|ROCK':
-      return 'You Lose! Rock beat Scissors';
-      break;
+    default:
+      return 'Lose';
   }
 }
 
 function game() {
-  let a = 0
-  ,   b = 0
-  ,   computerSelection = computerPlay();
-    console.log(playRound(playerSelection, computerSelection));
-    if (playRound(playerSelection, computerSelection) == 'You Win! Rock beat Scissors' ||
-        playRound(playerSelection, computerSelection) == 'You Win! Paper beats Rock' ||
-        playRound(playerSelection, computerSelection) == 'You Win! Scissors beat Paper') {
-      a++;
-      console.log('Player: ' + a + ' Computer: ' + b);
-    } else if (playRound(playerSelection, computerSelection) == 'You Lose! Paper beats Rock' ||
-               playRound(playerSelection, computerSelection) == 'You Lose! Scissors beat Paper' ||
-               playRound(playerSelection, computerSelection) == 'You Lose! Rock beat Scissors') {
-      b++;
-      console.log('Player: ' + a + ' Computer: ' + b);
+    let computerSelection = computerPlay();
+    if (computerSelection == 'ROCK') {
+      myImage.setAttribute('style', 'background-image: url("images/rock.jpg"); background-size: 110px 150px; border: 5px solid #0a0a0a2e; height: 250px; width: 250px; background-color: #90c9c0;');
+    } else if (computerSelection == 'PAPER') {
+      myImage.setAttribute('style', 'background-image: url("images/paper.jpg"); background-size: 110px 150px; border: 5px solid #0a0a0a2e; height: 250px; width: 250px; background-color: #90c9c0;');
     } else {
-      console.log('Player: ' + a + ' Computer: ' + b);
+      myImage.setAttribute('style', 'background-image: url("images/scissors.jpg"); background-size: 110px 150px; border: 5px solid #0a0a0a2e; height: 250px; width: 250px; background-color: #90c9c0;');
+    }
+    if (playRound(playerSelection, computerSelection) == 'Win') {
+      a += 1;
+      console.log(a + ' - ' + b);
+    } else if (playRound(playerSelection, computerSelection) == 'Lose') {
+      b += 1;
+      console.log(a + ' - ' + b);
+    } else {
+      console.log(a + ' - ' + b);
+    }
+    if (a == 5 && b < 5) {
+      a = 0;
+      b = 0;
+      console.log('Player Wins');
+    } else if (a < 5 && b == 5) {
+      a = 0;
+      b = 0;
+      console.log('Computer Wins');
+    } else if (a == b == 5) {
+      a = 0;
+      b = 0;
+      console.log('Draw');
     }
   }
