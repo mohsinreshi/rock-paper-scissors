@@ -78,14 +78,14 @@ function game() {
     if (a == 5 && b < 5) {
       a = 0;
       b = 0;
-      scoreSpan.textContent = 'Player Wins';
+      scoreSpan.textContent = 'You Win!';
     } else if (a < 5 && b == 5) {
       a = 0;
       b = 0;
-      scoreSpan.textContent = 'Computer Wins';
+      scoreSpan.textContent = 'You Lose!';
     } else if (a == b == 5) {
       a = 0;
       b = 0;
-      scoreSpan.textContent = 'Draw';
+      scoreSpan.textContent = 'Draw!';
     }
   }
